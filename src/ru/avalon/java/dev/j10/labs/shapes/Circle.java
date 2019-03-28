@@ -10,23 +10,23 @@ package ru.avalon.java.dev.j10.labs.shapes;
  */
 public class Circle  implements Ellipse{
     
-    private final float x;
-    private final float y;
-    private final float r;      //радиус
-    private final int rotation;
+    private float x;      // абсцисса
+    private float y;      // ордината
+    private float r;      // радиус
+    private int rotation; // угол поворота
     
     
-    public Circle(){
-        x = (float)(Math.random());
-        y = (float)(Math.random());
-        r = (float)(Math.random());  
-        rotation = (int) (Math.random()*360);
+    public Circle(){                    
+        x = (float)(Math.random()*100);
+        y = (float)(Math.random()*100);
+        r = (float)(Math.random()*100);  
+//        rotation = (int) (Math.random()*360);
     }
-    
+    // метод, возвращающий х
     @Override
     public float getX(){return x;}
     
-    
+    // метод, возвращающий у
     @Override
     public float getY(){return y;}
     
@@ -36,22 +36,26 @@ public class Circle  implements Ellipse{
      * 1. Используйте наследование.
      * 2. Реализуйте все абстрактные методы.
      */
-
+    
+    // метод, возвращающий длину окружности
     @Override
     public float getLength() {
         return (float)(2*Math.PI * r);
     }
-
+    
+    // метод, возвращающий площадь
     @Override
     public float getArea() {
         return (float)(Math.PI*r*r);
     }
-
+    
+    // метод, возвращающий угол поворота
     @Override
     public int getRotation() {
-        return rotation;
+        return 0;
     }
     
+    // метод, преобразующий и возвращающий строку
     @Override
     public String toString(){
         return " Круг. Длина окружности равна " + getLength();}

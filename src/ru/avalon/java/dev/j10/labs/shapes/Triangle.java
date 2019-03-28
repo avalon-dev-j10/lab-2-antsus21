@@ -17,49 +17,55 @@ package ru.avalon.java.dev.j10.labs.shapes;
 public class Triangle implements Polygon{
     
     
-    private final float a;
-    private final float b;
-    private final float c;
-    private final float h;      // высота треугольника
-    private final float x;
-    private final float y;
-    private final int rotation;
+    private float a;        // стороны
+    private float b;        //
+    private float c;        //треугольника
+    private float x;        // абсцисса
+    private float y;        // ордината
+    private int rotation;   // угол поворота
     
     public Triangle(){
-        a = (float) (Math.random());
-        b = (float) (Math.random());
-        c = (float) (Math.random());
-        h = (float) (Math.random());
-        x = (float) (Math.random());
-        y = (float) (Math.random());
+        a = (float) (40+Math.random()*60);
+        b = (float) (40+Math.random()*60);
+        c = (float) (40+Math.random()*60);
+        x = (float) (40+Math.random()*60);
+        y = (float) (40+Math.random()*60);
         rotation = (int) (360*Math.random());
     }
-
+    
+    // метод, возвращающий периметр
     @Override
     public float getPerimeter() {
         return a+b+c;
     }
-
+    
+    // метод, возвращающий площадь
     @Override
     public float getArea() {
-        return a*h*0.5f;
+        
+        float p = (float) (0.5*(a+b+c)); // полупериметр треугольника
+        return (float)(Math.sqrt(p*(p-a)*(p-b)*(p-c))); // Вычисление площади по формуле Герона
     }
-
+    
+    // метод, возвращающий поворот
     @Override
     public int getRotation() {
         return rotation;
     }
-
+    
+    // метод, возвращающий х
     @Override
     public float getX() {
         return x;
     }
-
+    
+    // метод, возвращающий у
     @Override
     public float getY() {
         return y;
     }
     
+    // метод, преобразующий и возвращающий строку   
     @Override
     public String toString(){
         return " Треугольник. Периметр треугольника равен " + getPerimeter();}

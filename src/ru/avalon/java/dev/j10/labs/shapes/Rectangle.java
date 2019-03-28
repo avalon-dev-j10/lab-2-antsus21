@@ -10,11 +10,11 @@ import java.lang.Math;
  */
 public class Rectangle implements Polygon{
     
-    private final float a;        // длина
-    private final float b;        // ширина
-    private final float x;
-    private final float y;
-    private final int rotation;
+    private float a;        // длина
+    private float b;        // ширина
+    private float x;        // абсцисса
+    private float y;        // ордината
+    private int rotation;   // угол поворота
     /*
      * TODO: Реализовать класс 'Rectangle'
      * 1. Используйте наследование.
@@ -22,37 +22,39 @@ public class Rectangle implements Polygon{
      */
     
     public Rectangle() {
-        a = (float)(Math.random()); 
-        b = (float)(Math.random());
-        x = (float)(Math.random());
-        y = (float)(Math.random());
+        a = (float)(Math.random()*100); 
+        b = (float)(Math.random()*100);
+        x = (float)(Math.random()*100);
+        y = (float)(Math.random()*100);
         rotation = (int)(360*Math.random());
     }
     
+    // метод, возвращающий периметр
     @Override
     public float getPerimeter() {
         return (float)(2*(a+b));
     }
-
+    // метод, возвращающий площадь
     @Override
     public float getArea() {
         return (float)(a*b);
     }
-
+    // метод, возвращающий угол поворота
     @Override
     public int getRotation() {
         return rotation;
     }
-
+    // метод, возвращающий х
     @Override
     public float getX() {
         return x;
     }
-
+    // метод, возвращающий у
     @Override
     public float getY() {
         return y;
     }
+    // метод, преобразующий и возвращающий строку
     @Override
     public String toString(){
         return " Прямоугольник. Периметр прямоугольника равен " + getPerimeter();

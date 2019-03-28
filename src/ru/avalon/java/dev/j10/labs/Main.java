@@ -25,7 +25,7 @@ public class Main {
         
         
         Shape maxS = shapes[0];
-        for (int j =0; j<10; j++) {
+        for (int j =1; j<10; j++) {
             System.out.println(shapes[j] + " Площадь = " + shapes[j].getArea());
             if (shapes[j].getArea() > maxS.getArea()) {
                 maxS = shapes[j];
