@@ -26,12 +26,12 @@ public class Triangle implements Polygon{
     private final int rotation;
     
     public Triangle(){
-        a = (float) (3*Math.random());
-        b = (float) (3*Math.random());
-        c = (float) (3*Math.random());
-        h = (float) (3*Math.random());
-        x = (float) (3*Math.random());
-        y = (float) (3*Math.random());
+        a = (float) (Math.random());
+        b = (float) (Math.random());
+        c = (float) (Math.random());
+        h = (float) (Math.random());
+        x = (float) (Math.random());
+        y = (float) (Math.random());
         rotation = (int) (360*Math.random());
     }
 

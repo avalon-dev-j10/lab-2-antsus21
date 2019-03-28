@@ -22,10 +22,10 @@ public class Rectangle implements Polygon{
      */
     
     public Rectangle() {
-        a = (float)(2*Math.random()); 
-        b = (float)(2*Math.random());
-        x = (float)(2*Math.random());
-        y = (float)(2*Math.random());
+        a = (float)(Math.random()); 
+        b = (float)(Math.random());
+        x = (float)(Math.random());
+        y = (float)(Math.random());
         rotation = (int)(360*Math.random());
     }
     
