@@ -25,9 +25,9 @@ public class Triangle implements Polygon{
     private int rotation;   // угол поворота
     
     public Triangle(){
-        a = (float) (40+Math.random()*60);
-        b = (float) (40+Math.random()*60);
-        c = (float) (40+Math.random()*60);
+        a = (float) (60+Math.random()*60);
+        b = (float) (60+Math.random()*60);
+        c = (float) (60+Math.random()*60);
         x = (float) (40+Math.random()*60);
         y = (float) (40+Math.random()*60);
         rotation = (int) (360*Math.random());
