@@ -15,6 +15,13 @@ public class Circle  implements Ellipse{
     private final float r;      //радиус
     private final int rotation;
     
+        /*  TODO (Проверка№1 ЛР№2)
+        - Добавить комментарии к полям и методам класса
+        - Все переменные делать финализированными бесмысленно, данные параметры возможно
+        понадобиться изменить при работе с ними. Например: координаты круга
+        повотора, могут меняться, если мы будем перемещать фигуру по плоскости или поворачивать.
+        - Значения random сделать в пределах до 100
+    */
     
     public Circle(){
         x = (float)(Math.random());
@@ -50,6 +57,10 @@ public class Circle  implements Ellipse{
     @Override
     public int getRotation() {
         return rotation;
+        
+    /*  TODO (Проверка№1 ЛР№2)
+        - У круга нет угла поворота
+    */
     }
     
     @Override
