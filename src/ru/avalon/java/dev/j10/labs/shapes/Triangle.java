@@ -14,7 +14,74 @@ package ru.avalon.java.dev.j10.labs.shapes;
  *
  * @see <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA">Треугольник</a>
  */
-public class Triangle {
+public class Triangle implements Polygon{
+    
+    
+    private final float a;
+    private final float b;
+    private final float c;
+    private final float h;      // высота треугольника
+    private final float x;
+    private final float y;
+    private final int rotation;
+    
+    public Triangle(){
+        a = (float) (Math.random());
+        b = (float) (Math.random());
+        c = (float) (Math.random());
+        h = (float) (Math.random());
+        x = (float) (Math.random());
+        y = (float) (Math.random());
+        rotation = (int) (360*Math.random());
+    }
+    
+    /*  TODO (Проверка№1 ЛР№2)
+        - Добавить комментарии к полям и методам класса
+        - Все переменные делать финализированными бесмысленно, данные параметры возможно
+        понадобиться изменить при работе с ними. Например: координаты треугольника или угол
+        повотора, могут меняться, если мы будем перемещать фигуру по плоскости или поворачивать.
+        - Стороны и высота треугольнка тоже могут меняться.
+        - Для работы с треугольником достаточно знать все его 3 стороны, высота в данном случае будет
+        параметр зависящий от значений этих сторон, и его всегда можно вычислить! Убрать высоту!
+        - Если ты рандомно создаешь три стороны
+        треугольника, ты должен соблюдать главное его правило - "Сумма любых двух
+        сторон треугольника, должна быть больше чем третья"
+        - Например, у тебя может создаться треугольник со сторонами 3, 10 и 40.
+        Такой треугольник невозможно построить и не выполняется правило
+        3 + 10 > 40 - ложь, поэтому возникает NaN
+        - Исправить метод создания треугольника!!!
+        - Значения random сделать в пределах от 40 до 100
+        - Площадь треугольника вычислить по формуле Герона!
+    */
+
+    @Override
+    public float getPerimeter() {
+        return a+b+c;
+    }
+
+    @Override
+    public float getArea() {
+        return a*h*0.5f;
+    }
+
+    @Override
+    public int getRotation() {
+        return rotation;
+    }
+
+    @Override
+    public float getX() {
+        return x;
+    }
+
+    @Override
+    public float getY() {
+        return y;
+    }
+    
+    @Override
+    public String toString(){
+        return " Треугольник. Периметр треугольника равен " + getPerimeter();}
 
     /*
      * TODO: Реализовать класс 'Triangle'
