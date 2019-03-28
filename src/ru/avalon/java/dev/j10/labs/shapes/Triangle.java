@@ -14,7 +14,55 @@ package ru.avalon.java.dev.j10.labs.shapes;
  *
  * @see <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA">Треугольник</a>
  */
-public class Triangle {
+public class Triangle implements Polygon{
+    
+    
+    private final float a;
+    private final float b;
+    private final float c;
+    private final float h;      // высота треугольника
+    private final float x;
+    private final float y;
+    private final int rotation;
+    
+    public Triangle(){
+        a = (float) (3*Math.random());
+        b = (float) (3*Math.random());
+        c = (float) (3*Math.random());
+        h = (float) (3*Math.random());
+        x = (float) (3*Math.random());
+        y = (float) (3*Math.random());
+        rotation = (int) (360*Math.random());
+    }
+
+    @Override
+    public float getPerimeter() {
+        return a+b+c;
+    }
+
+    @Override
+    public float getArea() {
+        return a*h*0.5f;
+    }
+
+    @Override
+    public int getRotation() {
+        return rotation;
+    }
+
+    @Override
+    public float getX() {
+        return x;
+    }
+
+    @Override
+    public float getY() {
+        return y;
+    }
+    
+    @Override
+    public String toString(){
+        return " Треугольник. Периметр треугольника равен " + getPerimeter();}
 
     /*
      * TODO: Реализовать класс 'Triangle'
